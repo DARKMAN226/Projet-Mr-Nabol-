@@ -7,10 +7,10 @@
 <img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" />
 
 <!-- Effet typing animé -->
-<p align="center">
+
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Bienvenue+ici;Partagez+vos+codes;Python+et+C&size=30&color=F20C39&background=FF20A500&width=800&height=80)](https://git.io/typing-svg)
 
-</p>
+
 
 
 ## `Je vous demande de faire part dans le groupe Whatsapp apres avoir tester le projet  `
