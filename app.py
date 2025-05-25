@@ -8,10 +8,10 @@ from wtforms.validators import DataRequired, NumberRange
 from openai import OpenAI
 import io
 
-# Pour la génération PDF
+# La ligne suivante ces pour la génération PDF. Mais ces pas encore fonctionnel
 from weasyprint import HTML
 
-# Initialisation app et config
+# Debut du vrai code 🥲
 app = Flask(__name__)
 app.config.from_object('config.Config')
 
@@ -20,11 +20,12 @@ if not app.config.get('SECRET_KEY'):
 
 db = SQLAlchemy(app)
 
-# OpenAI client
+# la ligne suivante ces pour faire appel a une clef API pour le chat IA (OpenAI). Mais pas encore fonctionnel
 openai_api_key = app.config.get('OPENAI_API_KEY', '')
 client = OpenAI(api_key=openai_api_key)
 
-# Modèle base de données
+#Bon sa pour la base de donner "Sqllite" Mais on as pas fait sa en classe mais 
+#j'ai fait avec le peu de connaissance que j'ai sur les bas de donnné 
 class Transaction(db.Model):
     __tablename__ = 'transactions'
     id = db.Column(db.Integer, primary_key=True)
@@ -33,7 +34,7 @@ class Transaction(db.Model):
     date = db.Column(db.Date, nullable=False, default=datetime.utcnow)
     type = db.Column(db.String(10), nullable=False)  # 'depense' ou 'revenu'
 
-# Formulaires
+# Formulaires d'enregistrement pour revenu
 class TransactionForm(FlaskForm):
     amount = DecimalField('Montant (€)', validators=[DataRequired(), NumberRange(min=0.01)])
     category = SelectField('Catégorie', choices=[], validators=[DataRequired()])
@@ -48,7 +49,8 @@ class ChatForm(FlaskForm):
 DEPENSE_CATEGORIES = [('nourriture', 'Nourriture'), ('loyer', 'Loyer'), ('loisirs', 'Loisirs'), ('autres', 'Autres')]
 REVENU_CATEGORIES = [('bourse', 'Bourse'), ('job', 'Job étudiant'), ('autres', 'Autres')]
 
-# Routes
+# ah les routes c'est pas vue en classe . Mais ces facile sa ce base sur les modules present  
+# sur les fichier html sa permet de relier chaque fichier html au fichier principal qui est app.py
 
 @app.route('/')
 def index():
@@ -233,12 +235,12 @@ def rapport_pdf():
         evolution_mensuelle=evolution_mensuelle
     )
 
-    # Génération du PDF avec WeasyPrint
+    # Utilisation du la bibliothèque WeasyPrint pour la generation du fichier pdf mais pas encore dispo je vais regler sa apres
     pdf = HTML(string=html).write_pdf()
     return Response(pdf, mimetype='application/pdf',
                     headers={'Content-Disposition': 'inline; filename=rapport_budget.pdf'})
 
-# Commande CLI pour initialiser la base
+# Commande pour initialiser la base 😒
 @app.cli.command('initdb')
 def initdb_command():
     db.create_all()
