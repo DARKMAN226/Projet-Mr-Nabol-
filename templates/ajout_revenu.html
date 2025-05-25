@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Ajouter un Revenu{% endblock %}
+
+{% block content %}
+<h1>Ajouter un revenu</h1>
+
+<form method="POST" action="{{ url_for('ajout_revenu') }}">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.amount.label(class="form-label") }}
+        {{ form.amount(class="form-control bg-dark-neon text-neon") }}
+    </div>
+    <div class="mb-3">
+        {{ form.category.label(class="form-label") }}
+        {{ form.category(class="form-select bg-dark-neon text-neon") }}
+    </div>
+    <div class="mb-3">
+        {{ form.date.label(class="form-label") }}
+        {{ form.date(class="form-control bg-dark-neon text-neon") }}
+    </div>
+    <button type="submit" class="btn btn-neon">Enregistrer</button>
+</form>
+{% endblock %}

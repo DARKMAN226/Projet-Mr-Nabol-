@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport Budgétaire PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2cm;
+            color: #222;
+            background: #fff;
+        }
+        h1, h2 {
+            color: #007BFF;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        .resume {
+            margin-bottom: 2em;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rapport Budgétaire</h1>
+    <p>Date du rapport : {{ date_rapport.strftime('%d/%m/%Y') }}</p>
+
+    <div class="resume">
+        <h2>Résumé</h2>
+        <p><strong>Solde actuel :</strong> {{ solde }} fcfa</p>
+        <p><strong>Total des revenus :</strong> {{ total_revenus }} fcfa</p>
+        <p><strong>Total des dépenses :</strong> {{ total_depenses }} fcfa</p>
+    </div>
+
+    <div class="section">
+        <h2>Dépenses par catégorie</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Montant (fcfa)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categorie, montant in depenses_par_categorie.items() %}
+                <tr>
+                    <td>{{ categorie }}</td>
+                    <td>{{ "%.2f"|format(montant) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Évolution mensuelle des dépenses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mois</th>
+                    <th>Montant (fcfa)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mois, montant in evolution_mensuelle.items() %}
+                <tr>
+                    <td>{{ mois }}</td>
+                    <td>{{ "%.2f"|format(montant) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

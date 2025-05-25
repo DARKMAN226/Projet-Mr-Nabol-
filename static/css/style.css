@@ -1,0 +1,194 @@
+/*
+Theme: Neon Dark - Futuristic Budget App
+Author: [Your Name]
+*/
+
+/* ======================================================
+   Variables CSS
+   ====================================================== */
+:root {
+  --neon-primary: #00ffe7; /* Cyan */
+  --neon-secondary: #ff00ff; /* Magenta */
+  --bg-dark: #0a0a0a; /* Very Dark Gray */
+  --bg-medium: #1e1e1e; /* Medium Dark Gray */
+  --bg-light: #333333; /* Light Dark Gray */
+  --text-default: #ffffff; /* White */
+  --text-dimmed: #aaaaaa; /* Dimmed White */
+  --border-radius: 0.5rem;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+/* ======================================================
+   Global Styles
+   ====================================================== */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-default);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neon-primary);
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--neon-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--neon-secondary);
+}
+
+/* ======================================================
+   Bootstrap Overrides
+   ====================================================== */
+.navbar {
+  background-color: var(--bg-medium);
+  border-bottom: 2px solid var(--neon-primary);
+}
+
+.navbar-brand {
+  color: var(--neon-primary);
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: var(--neon-secondary);
+}
+
+.nav-link {
+  color: var(--text-default);
+  margin-left: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--neon-primary);
+}
+
+.btn {
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--neon-primary);
+  border-color: var(--neon-primary);
+  color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--neon-secondary);
+  border-color: var(--neon-secondary);
+  color: var(--bg-dark);
+}
+
+.btn-outline-neon {
+  border: 2px solid var(--neon-primary);
+  color: var(--neon-primary);
+  background-color: transparent;
+}
+
+.btn-outline-neon:hover {
+  background-color: var(--neon-primary);
+  color: var(--bg-dark);
+}
+
+.form-control {
+  background-color: var(--bg-light);
+  border: 1px solid var(--neon-primary);
+  color: var(--text-default);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+}
+
+.form-control:focus {
+  border-color: var(--neon-secondary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 231, 0.25);
+}
+
+.form-select {
+  background-color: var(--bg-light);
+  color: var(--text-default);
+  border: 1px solid var(--neon-primary);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+}
+
+.form-select:focus {
+  border-color: var(--neon-secondary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 231, 0.25);
+}
+
+.table {
+  color: var(--text-default);
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--neon-primary);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--bg-medium);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--bg-light);
+}
+
+/* ======================================================
+   Custom Classes
+   ====================================================== */
+.bg-dark-neon {
+  background-color: var(--bg-dark);
+}
+
+.bg-black-neon {
+  background-color: #000; /* Pure Black */
+}
+
+.border-bottom-neon {
+  border-bottom: 2px solid var(--neon-primary);
+}
+
+.text-neon {
+  color: var(--neon-primary);
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-medium);
+  border: 1px solid var(--neon-primary);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======================================================
+   Responsiveness
+   ====================================================== */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-link {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<canvas id="depensesParCategorie" width="400" height="200"></canvas>
+<canvas id="evolutionMensuelle" width="400" height="200" class="mt-4"></canvas>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Données passées depuis Flask au template
+    const depensesParCategorie = {{ depenses_par_categorie | tojson }};
+    const evolutionMensuelle = {{ evolution_mensuelle | tojson }};
+
+    // Graphique camembert des dépenses par catégorie
+    const ctx1 = document.getElementById('depensesParCategorie').getContext('2d');
+    new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(depensesParCategorie),
+            datasets: [{
+                data: Object.values(depensesParCategorie),
+                backgroundColor: ['#00ffe7', '#ff00ff', '#00ff00', '#ffff00', '#ff6600'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'Dépenses par catégorie'
+                }
+            }
+        }
+    });
+
+    // Graphique ligne de l’évolution mensuelle des dépenses
+    const ctx2 = document.getElementById('evolutionMensuelle').getContext('2d');
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: Object.keys(evolutionMensuelle),
+            datasets: [{
+                label: 'Dépenses mensuelles (€)',
+                data: Object.values(evolutionMensuelle),
+                borderColor: '#00ffe7',
+                backgroundColor: 'rgba(0, 255, 231, 0.2)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 10
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Évolution mensuelle des dépenses'
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

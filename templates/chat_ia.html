@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Chat IA{% endblock %}
+
+{% block content %}
+<h1>Conseils budgétaires IA</h1>
+
+<div id="chat-container" class="mb-3" style="height: 400px; overflow-y: auto; border: 1px solid var(--neon-primary); padding: 1rem; background: #111;">
+    {% for message in chat_history %}
+        <div class="mb-2">
+            <strong class="text-neon">{{ message.user }}:</strong> {{ message.text }}
+        </div>
+    {% endfor %}
+</div>
+
+<form id="chat-form" method="POST" action="{{ url_for('chat_ia') }}">
+    {{ form.hidden_tag() }}
+    <div class="input-group">
+        {{ form.message(class="form-control bg-dark-neon text-neon", placeholder="Posez votre question budgétaire...") }}
+        <button class="btn btn-neon" type="submit">Envoyer</button>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Scroll automatique vers le bas du chat à chaque chargement
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+</script>
+{% endblock %}

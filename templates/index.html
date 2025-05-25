@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Accueil - Budget Étudiant{% endblock %}
+
+{% block content %}
+<h1>Bienvenue sur votre suivi de budget étudiant</h1>
+
+<div class="dashboard-grid">
+    <div class="card bg-transparent-neon p-3 mb-3">
+        <h3>Solde actuel</h3>
+        <p class="display-4">{{ solde }} fcfa</p>
+    </div>
+
+    <div class="card bg-transparent-neon p-3 mb-3">
+        <h3>Dépenses ce mois</h3>
+        <p>{{ total_depenses }} fcfa</p>
+    </div>
+
+    <div class="card bg-transparent-neon p-3 mb-3">
+        <h3>Revenus ce mois</h3>
+        <p>{{ total_revenus }} fcfa</p>
+    </div>
+
+    <div class="card bg-transparent-neon p-3 mb-3">
+        <h3>Catégorie principale</h3>
+        <p>{{ categorie_principale }}</p>
+    </div>
+</div>
+
+<div class="my-4">
+    <a href="{{ url_for('ajout_depense') }}" class="btn btn-neon me-2">Ajouter une dépense</a>
+    <a href="{{ url_for('ajout_revenu') }}" class="btn btn-neon">Ajouter un revenu</a>
+</div>
+{% endblock %}
