@@ -10,5 +10,5 @@ class Config:
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # Clé API OpenAI (renommez CHAT_API_KEY en OPENAI_API_KEY)
+    # Clé API OpenAI (Pardonnez les gas a ne pas partager s'il vous plait 😏😥)
     OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY') or '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'
