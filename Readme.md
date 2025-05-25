@@ -1,6 +1,6 @@
 <!-- Logo du projet -->
 <p align="center">
-  <img src="https://i.imgur.com/VEhhjAo.png" alt="Quiz Application Logo" width="200" />
+  <img src="https://i.imgur.com/VEhhjAo.png" alt="Quiz Application Logo" width="250" />
 </p>
 
 <!-- Ligne de séparation animée -->
