@@ -1,25 +1,20 @@
-/*
-Theme: Neon Dark - Futuristic Budget App
-Author: [Your Name]
-*/
-
 /* ======================================================
-   Variables CSS
+   Ah les gas voici le css . A ne pas toucher 😒😒
    ====================================================== */
 :root {
-  --neon-primary: #00ffe7; /* Cyan */
-  --neon-secondary: #ff00ff; /* Magenta */
-  --bg-dark: #0a0a0a; /* Very Dark Gray */
-  --bg-medium: #1e1e1e; /* Medium Dark Gray */
-  --bg-light: #333333; /* Light Dark Gray */
-  --text-default: #ffffff; /* White */
-  --text-dimmed: #aaaaaa; /* Dimmed White */
+  --neon-primary: #00ffe7; 
+  --neon-secondary: #ff00ff; 
+  --bg-dark: #0a0a0a; 
+  --bg-medium: #1e1e1e; 
+  --bg-light: #333333; 
+  --text-default: #ffffff; 
+  --text-dimmed: #aaaaaa; 
   --border-radius: 0.5rem;
   --font-family: 'Orbitron', sans-serif;
 }
 
 /* ======================================================
-   Global Styles
+   Un styles general; une fois de plus ne touchez pas 🥲 
    ====================================================== */
 body {
   background-color: var(--bg-dark);
@@ -46,7 +41,7 @@ a:hover {
 }
 
 /* ======================================================
-   Bootstrap Overrides
+   ca ces le framework de css ( Bootstrap )  je l'avaos mentionner sur la structure du projet
    ====================================================== */
 .navbar {
   background-color: var(--bg-medium);
@@ -143,14 +138,14 @@ a:hover {
 }
 
 /* ======================================================
-   Custom Classes
+   les styles perso ✌️
    ====================================================== */
 .bg-dark-neon {
   background-color: var(--bg-dark);
 }
 
 .bg-black-neon {
-  background-color: #000; /* Pure Black */
+  background-color: #000; 
 }
 
 .border-bottom-neon {
@@ -181,7 +176,7 @@ a:hover {
 }
 
 /* ======================================================
-   Responsiveness
+   ben sa c'es pour rendre les pages responsives c'est a dire adapté a tous écrans
    ====================================================== */
 @media (max-width: 768px) {
   .dashboard-grid {
@@ -192,3 +187,4 @@ a:hover {
     margin-left: 0;
   }
 }
+/* ouf finish  */
