@@ -14,7 +14,15 @@
 </p>
 
 
-                                   ## `CLONE REPO & INSTALLATION DEPENDENCIES`
+## `Je vous demande de faire part dans le groupe Whatsapp apres avoir tester le projet  `
+
+                                 
+## `CLONE REPO & INSTALLATION DEPENDENCIES suivez les commandes un a un Merci `
+
+```bash
+git clone https://github.com/DARKMAN226/Projet-Mr-Nabol-.git
+```
+
 ```bash
 python -m venv Dark
 ```
