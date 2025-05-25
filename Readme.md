@@ -7,8 +7,8 @@
 <img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%" />
 
 <!-- Effet typing animé -->
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Bienvenue+ici;Partagez+vos+codes&speed=100&size=30&color=F20C39&background=FF20A500&width=800&height=80)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Bienvenue+ici;Partagez+vos+codes;Python+et+C&size=30&color=F20C39&background=FF20A500&width=800&height=80)](https://git.io/typing-svg)
 
 
 
