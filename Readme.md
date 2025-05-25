@@ -8,9 +8,8 @@
 
 <!-- Effet typing animé -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Rubik+Dirt&size=40&pause=1000&color=F20C39&background=FF20A500&center=true&vCenter=true&width=800&height=80&lines=Ici+deposez;Vos+Différent+code;C+comme+python" alt="Typing SVG" />
-  </a>
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Bienvenue+ici;Partagez+vos+codes;Python+et+C&size=30&color=F20C39&background=FF20A500&width=800&height=80)](https://git.io/typing-svg)
+
 </p>
 
 
