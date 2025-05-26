@@ -23,6 +23,10 @@ git clone https://github.com/DARKMAN226/Projet-Mr-Nabol-.git
 ```
 
 ```bash
+cd Projet-Mr-Nabol-
+```
+
+```bash
 python -m venv Dark
 ```
 
