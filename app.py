@@ -36,7 +36,7 @@ class Transaction(db.Model):
 
 # Formulaires d'enregistrement pour revenu
 class TransactionForm(FlaskForm):
-    amount = DecimalField('Montant (€)', validators=[DataRequired(), NumberRange(min=0.01)])
+    amount = DecimalField('Montant (FCFA)', validators=[DataRequired(), NumberRange(min=0.01)])
     category = SelectField('Catégorie', choices=[], validators=[DataRequired()])
     date = DateField('Date', default=datetime.today, validators=[DataRequired()])
     submit = SubmitField('Enregistrer')
